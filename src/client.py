@@ -190,19 +190,6 @@ class ExchangeClient(KalshiClient):
         dictr = self.get(url+query_string)
         return dictr
 
-    def get_market_history(self, 
-                            ticker:str,
-                            limit:Optional[int]=None,
-                            cursor:Optional[str]=None,
-                            max_ts:Optional[int]=None,
-                            min_ts:Optional[int]=None,
-                            ):
-        relevant_params = {k: v for k,v in locals().items() if k!= 'ticker'}                            
-        query_string = self.query_generation(params = relevant_params)
-        market_url = self.get_market_url(ticker = ticker)
-        dictr = self.get(market_url + '/history' + query_string)
-        return dictr
-
     def get_orderbook(self, 
                         ticker:str,
                         depth:Optional[int]=None,

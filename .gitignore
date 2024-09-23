@@ -2,3 +2,4 @@ kalshi-prod.pem
 kalshi-test.pem
 .venv
 .pyc
+calibration.csv
